@@ -4,6 +4,7 @@
 // 2/2/2026
 
 #include <iostream>
+#include <iomanip> // for the 2 decimal places
 using namespace std;
 
 int main() {
@@ -17,6 +18,7 @@ int main() {
 
     // number of apples owned
     // int apples;
+    int amount_purchased;
 
     // add cost of each apple
     double cost_each = 0.99;
@@ -36,12 +38,19 @@ int main() {
     cout << "Nice to meet you, " << full_name << endl;
 
     // ask how much they'd like to purchase
-
-
+    cout << "How many " << product << " would you like today? ";
+    cin >> amount_purchased;
 
     // calculate total price
-    // give the result
+    total_cost = amount_purchased * cost_each;
 
+    // Formatting: set all prices to 2 decimal places
+    cout << setprecision(2) << fixed;
+
+    // give the result
+    cout << "For " << amount_purchased << " " << product << endl;
+    cout << "That will be: $" << total_cost << endl;
+    cout << "Thank you fro shopping with us!" << endl;
 
 
     return 0; //no errors
