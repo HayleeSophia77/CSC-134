@@ -52,6 +52,5 @@ int main() {
     cout << "That will be: $" << total_cost << endl;
     cout << "Thank you fro shopping with us!" << endl;
 
-
     return 0; //no errors
 }
