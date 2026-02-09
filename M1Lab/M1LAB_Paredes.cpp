@@ -1,4 +1,4 @@
-CSC 134
+// CSC 134
 // M1LAB
 // Haylee Paredes
 // 2/2/2026
@@ -8,22 +8,41 @@ using namespace std;
 
 int main() {
     // This program will simulate an apple orchard.
-    // The owner’s name
-    string name =  "Haylee Paredes";
-    // number of apples owned
-    int apples = 100;
-    // price per apple
-    double pricePerApple = 0.25;
-    // calculate the total price of the apples
-    double totalPrice = apples * pricePerApple;
-    // print all the information about the orchard
-    cout << "Welcome to " << name;
-    cout << "'s apple orchard." << endl;
-    cout << "We have " << apples;
-    cout << " apples in stock." << endl;
-    cout << "Apples are currenttly $";
-    cout << pricePerApple << " each." << endl;
+    // The users name
+    // string name = "Haylee Paredes";
+    string first_name, last_name, full_name;
 
-    // Final line, to print totalPrice
-    cout << "If you want them all, that will be $" << totalPrice << "." << endl;
+    // add product variable
+    string product = "apples";
+
+    // number of apples owned
+    // int apples;
+
+    // add cost of each apple
+    double cost_each = 0.99;
+
+    // price per apple
+    // double pricePerApple;
+    double total_cost;
+
+    // greet the customer
+    // allow user input for their name, # of apples, & price of apples
+    cout << "Welcome to our " << product << " store!" << endl;
+    cout << "What is your first name? ";
+    cin >> first_name;
+    cout << "What is your last name? ";
+    cin >> last_name;
+    full_name = first_name + " " + last_name;
+    cout << "Nice to meet you, " << full_name << endl;
+
+    // ask how much they'd like to purchase
+
+
+
+    // calculate total price
+    // give the result
+
+
+
+    return 0; //no errors
 }
