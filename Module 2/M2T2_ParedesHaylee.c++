@@ -8,6 +8,7 @@ Our Goal: A correct looking receipt that handles sales tax, assuming that the sa
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 // note: if you don't use namespace std, you will need to use std::cout instead of cout (also cin)
 
@@ -41,7 +42,8 @@ int main() {
     total_price = sub_total + tip_amount + tax_amount;
 
 
-    // Present the output
+    // Present the output with 2 decimal places
+    cout << setprecision(2) << fixed;       // REMEMBER to import <iomanip>
     cout << endl;
     cout << "YOUR ORDER" << endl << "--------------------------------" << endl;
     cout << num_meals << " x " << meal_name << "\t$" << meal_price << endl;
