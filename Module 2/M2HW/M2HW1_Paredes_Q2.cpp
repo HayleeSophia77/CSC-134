@@ -11,8 +11,8 @@ using namespace std;
 
 int main() {
     // Constants for cost & amount charged
-    const double COST_PER_CUBIC_FOOT = 0.23;
-    const double CHARGE_PER_CUBIC_FOOT = 0.5;
+    const double COST_PER_CUBIC_FOOT = 0.3;
+    const double CHARGE_PER_CUBIC_FOOT = 0.52;
 
     // Variables
     double length,  // Crate's length
