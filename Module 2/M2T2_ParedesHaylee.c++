@@ -1,5 +1,5 @@
 /*
-CIS-134
+CSC-134
 M2T2 Receipt Calculator
 02/16/2026
 Haylee Paredes
