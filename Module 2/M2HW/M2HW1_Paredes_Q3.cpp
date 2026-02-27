@@ -5,3 +5,8 @@ Haylee Paredes
 02/25/2026
 */
 
+// Use string school, & string team
+string school = "FTCC";
+string team = "Trojans";
+
+cout << "Let's Go " << school << endl;
