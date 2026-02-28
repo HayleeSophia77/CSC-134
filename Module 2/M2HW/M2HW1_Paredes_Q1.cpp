@@ -17,7 +17,7 @@ int main() {
     double deposit;
     double withdraw;
 
-
+    // Acknowledge question #
     cout << "Welcome to Question One Banking Transactions!";
 
     // Get user name
