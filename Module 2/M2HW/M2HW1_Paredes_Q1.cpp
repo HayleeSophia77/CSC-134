@@ -46,6 +46,5 @@ int main() {
     cout << "Account #: 2963418" << endl;
     cout << "Final balance: $" << finalBal << endl;
 
-    
     return 0;
 }
