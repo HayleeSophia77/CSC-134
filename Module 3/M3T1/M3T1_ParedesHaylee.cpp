@@ -28,8 +28,8 @@ int main(){
     area2 = len2 * wid2;
 
     // Display the area
-    cout << "Area of rectangle 1: "<< area1 << endl;
-    cout << "Area of rectangle 2: "<< area2 << endl;
+    cout << "Area of rectangle 1: " << area1 << endl;
+    cout << "Area of rectangle 2: " << area2 << endl;
 
     return 0;
 }
