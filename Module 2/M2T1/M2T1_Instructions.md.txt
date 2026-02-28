@@ -1,0 +1,26 @@
+We are adding onto M1LAB1.
+In M2T1, we will use the cin method described in the book to create a version of the Apple Sales program that responds to user input.
+
+(Instead of Jane Smith, it will be you, and you will set the number and price of the apples.)
+
+In other words, you will modify the code you already wrote. Instead of setting name, apples, and pricePerApple by hard coding their values, you will set their values by cin. After that, the program proceeds as it did before, but with the user entered values.
+
+You might notice some unusual behavior if the name you enter is more than one word; we'll look at that side effect later.
+
+A Quick Example
+
+// Here's the code you would use for name. 
+// apples and pricePerApple should work in a similar fashion.
+
+string name;     // replaces the line  string name = "Your Name"; 
+cout << "Please enter your name: ";     // ask the user for input
+cin >> name;     // wait for input, place it in name
+ 
+
+One common mistake is to use cin without first printing a "prompt", or question for the user, with cout. (Imagine walking up to a person, thinking "What's your name?" but not saying it out loud, and just staring at them until they said their name. That's basically what the program is doing if you don't print a prompt first.)
+
+Again, this video is posted in the course playlist.
+
+Continuing from Before
+
+It's helpful to look at what we've done, and build on that. In M1LAB we did the original Apple Sales program, and this is mostly just a continuation of that but with user input.
