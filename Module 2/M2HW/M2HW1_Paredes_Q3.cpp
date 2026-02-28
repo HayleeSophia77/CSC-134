@@ -15,7 +15,8 @@ int main() {
     int slicePerPizza;
     int visitors;
 
-    cout << "How many pizzas were ordered? ";
+    cout << "Welcome to Question 3, A Pizza Party!";
+    cout << "\nHow many pizzas were ordered? ";
     cin >> pizzas;
 
     cout << "How many slices per pizza were there? ";

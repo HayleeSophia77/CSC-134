@@ -13,8 +13,9 @@ int main() {
     string school = "FTCC";
     string team = "Trojans";
 
+    cout << "Welcome to Question 4, School Cheer!";
     // Wasn't required but I wanted to add a explantion point to make it look more fun and cheerful.
-    cout << "Let's Go " << school << "!" << endl;
+    cout << "\nLet's Go " << school << "!" << endl;
     cout << "Let's Go " << school << "!" << endl;
     cout << "Let's Go " << school << "!" << endl;
     cout << "Let's Go " << team << "!" << endl;
