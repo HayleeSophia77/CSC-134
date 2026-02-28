@@ -26,8 +26,11 @@ int main() {
     // Set the desired output formatting for numbers.
     cout << setprecision(2) << fixed << showpoint;
 
+    // Acknowledge question #
+    cout << "Welcome to Question 2, A Case Study Improvement!";
+
     // Prompt the user for the crate's length, width, and height
-    cout << "Enter the dimensions of the crate (in feet):\n";
+    cout << "\nEnter the dimensions of the crate (in feet):\n";
     cout << "Length: ";
     cin >> length;
     cout << "Width: ";
