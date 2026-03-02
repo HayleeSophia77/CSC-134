@@ -29,7 +29,7 @@ int main() {
     // NOTE: Ask user a question
     // cout << "Do you choose door 1 or door 2?" << endl;
 
-    cout << "Do you choose fun fact 1 or fun fact 2?" << endl;
+    cout << "\nDo you choose fun fact 1 or fun fact 2?" << endl;
     cout << "Type 1 or 2: ";
     cin >> choice;
 
@@ -59,7 +59,7 @@ int main() {
 
     // NOTE: end of program
     // NOTE: runs no matter what they choose
-    cout << "Thank you for playing!" << endl;
+    cout << "\nThank you for playing!" << endl;
     return 0;
 } // NOTE: end of main() method
 
@@ -85,13 +85,13 @@ void chooseDoor2() {
 // The link to this website is: https://gotoptoy.com/blogs/news/8-surprising-facts-about-sanrio-characters?srsltid=AfmBOoqtViaARMxeOU8QQUrI_YS9wP9LhdcNnTGP1v4WcN0P-VxGq-NA.
 // I picked fact #1 and #6 for this assignment. 
 void chooseFF1() {
-    cout << "You chose fun fact 1." << endl;
+    cout << "\nYou chose fun fact 1!" << endl;
     cout << "Hello Kitty was not Sanrio’s first character. The honor goes to a bear named Coro-Chan!" << endl;
 }
 
 // NOTE: function is called if user chooses door 2
 void chooseFF2() {
-    cout << "You chose fun fact 2." << endl;
+    cout << "\nYou chose fun fact 2!" << endl;
     cout << "Pochacco only celebrates his birthday every four years. Pochacco is a leap-year baby who was born on February 29, which means he only gets to celebrate his birthday once every four years!" << endl;
 }
 
