@@ -20,7 +20,8 @@ int main() {
     cin >> numGrade;
 
     // Convert # grade to letter grade
-    // Note: I am very particular about the formatting of the output, so I added spaces and new lines cuz I find it looks cleaner and more readable.
+    // Note: I am very particular about the formatting of the output, so I added spaces 
+    // and new lines cuz I find it looks cleaner and more readable.
     if (numGrade >= 90 && numGrade <= 100) {
         cout << "\nYour letter grade is an A." << endl;
     }
@@ -36,10 +37,16 @@ int main() {
     else if (numGrade >= 0 && numGrade <= 59) {
         cout << "\nYour letter grade is an F." << endl;
     }
-    // Note: So I added this for instances like if the user enters a negative number as input. I usually ask AI to make sure I did all of the requirements of an assignment just in case I miss something but when I did that the AI said that I didn't need this. Is this something I should have put in here? 
-    // Note: Also, This does not work with words just numbers. For instance, if I entered "seven" it wouldn't show this message but instead show "Your letter grade is an F." I do not know how to fix that but I just wanted to point it out.
+    // Note: So I added this for instances like if the user enters a negative number as input. 
     else {
+        // I usually ask AI to make sure I did all of the requirements of an assignment 
+        // just in case I miss something but when I did that the AI said that I didn't need this. 
+        // Is this something I should have put in here? I thought this would be something to add but I just wanted to check.
         cout << "\nYou've entered an invalid grade." << endl;
+        // Also, This does not work with words just numbers. For instance, if I entered "seven" it wouldn't show this message 
+        // but instead show "Your letter grade is an F." I do not know how to fix that 
+        // but I just wanted to point it out.
+
     }
 
     // Thank user & end program
