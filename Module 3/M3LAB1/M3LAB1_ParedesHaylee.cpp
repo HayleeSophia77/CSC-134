@@ -37,3 +37,21 @@ int main() {
     cout << "Thank you for playing!" << endl;
     return 0;
 } // NOTE: end of main() method
+
+// Example 3: Define all other functions. 
+// NOTE: Declaring = "this function exists"
+// NOTE: Defining = "this is what the function does"
+
+// NOTE: function is called if user chooses door 1
+void chooseDoor1() {
+    cout << "You chose door 1." << endl;
+    cout << "You win ... a new car!" << endl;
+}
+
+// NOTE: function is called if user chooses door 2
+void chooseDoor2() {
+    cout << "You chose door 2." << endl;
+    cout << "You win ... a bottle of floor wax." << endl;
+}
+
+// NOTE: if added door 3 or 4, we would add another else-if to our main(), and declare and define chooseDoor3() and so on. 
