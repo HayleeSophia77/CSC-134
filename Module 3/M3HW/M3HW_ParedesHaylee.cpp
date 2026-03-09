@@ -6,9 +6,9 @@
 #include <iostream>
 // Q2
 #include <iomanip>
-Q1
+// Q1
 #include <string>
-Q4
+// Q4
 #include <ctime>
 using namespace std;
 
@@ -20,7 +20,6 @@ void quest4();
 
 int main() {
     int choice;
-    // TODO: add comment here
     bool keep_going = true;
     
     while (true == keep_going) {
