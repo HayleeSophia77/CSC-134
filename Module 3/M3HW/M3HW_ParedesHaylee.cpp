@@ -4,15 +4,19 @@
 // 03/09/2026
 
 #include <iostream>
+// Q2
 #include <iomanip>
+Q1
 #include <string>
+Q4
+#include <ctime>
 using namespace std;
 
 // Declare if more functions
 void quest1();
 void quest2();
 void quest3();
-//void quest4();
+void quest4();
 
 int main() {
     int choice;
@@ -26,7 +30,7 @@ int main() {
         cout << "1. Question 1 - Chatbot" << endl;
         cout << "2. Question 2 - Receipt Calculator" << endl;
         cout << "3. Question 3 - What Sanrio Character Are You?" << endl;
-        //cout << "4. Question 4 - Math Practice" << endl;
+        cout << "4. Question 4 - Math Practice" << endl;
         cout << "0. Exit" << endl;
 
         // Get user input
@@ -39,6 +43,12 @@ int main() {
         }
         else if (2 == choice) {
             quest2();
+        }
+        else if (3 == choice) {
+            quest3();
+        }
+        else if (4 == choice) {
+            quest4();
         }
         else if (0 == choice) {
             cout << "\nBye! Have a great day!" << endl;
@@ -165,6 +175,7 @@ void quest3() {
     cout << "Enter 1 or 2: ";
     cin >> answer1;
 
+    // Ask question 2 of quiz
     if (1 == answer1) {
         cout << "\nQuestion 2: Your friend invites you out. What sounds more fun?" << endl;
         cout << "1. Going to a cafe and trying all the desserts." << endl;
@@ -191,3 +202,35 @@ void quest3() {
 }
 
 // Call quest4 if user chooses question 4
+void quest4() {
+    cout << "\n4. Question 4 - Math Practice" << endl;
+
+    // Declare variables
+    int num1, num2;
+    int correct;
+    int user_answer;
+
+    // Get time and seed random number generator
+    int seed = time(0);
+    srand(seed);
+
+    // Limit range of #, use "y = 1 + rand() % maxRange;"
+    // Limit # from 1-9, use "y = 1 + rand() % 9;".
+    num1 = 1 + rand() % 9;
+    num2 = 1 + rand() % 9;
+
+    // Calculate correct answer
+    correct = num1 + num2;
+
+    // Get user input
+    cout << "What is " << num1 << " plus " << num2 << "? ";
+    cin >> user_answer;
+
+    // Check if answer is correct
+    if (user_answer == correct) {
+        cout << "Correct!" << endl;
+    }
+    else {
+        cout << "Incorrect." << endl;
+    }
+}
