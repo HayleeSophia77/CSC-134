@@ -11,7 +11,7 @@ using namespace std;
 // Declare if more functions
 void quest1();
 void quest2();
-//void quest3();
+void quest3();
 //void quest4();
 
 int main() {
@@ -25,7 +25,7 @@ int main() {
         cout << "Let's Go For GOLD!" << endl;
         cout << "1. Question 1 - Chatbot" << endl;
         cout << "2. Question 2 - Receipt Calculator" << endl;
-        //cout << "3. Question 3 - Choose Your Own Adventure" << endl;
+        cout << "3. Question 3 - What Sanrio Character Are You?" << endl;
         //cout << "4. Question 4 - Math Practice" << endl;
         cout << "0. Exit" << endl;
 
@@ -141,7 +141,10 @@ void quest2() {
 }
 
 // Call quest3 if user chooses question 3
+void quest3() {
+    cout << "\n3. Question 3 - What Sanrio Character Are You?" << endl;
 
-
+    cout << "Hello, welcome to 'What Sanrio Character Are You?' quiz!" << endl;
+}
 
 // Call quest4 if user chooses question 4
