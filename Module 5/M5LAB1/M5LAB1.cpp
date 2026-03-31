@@ -1,26 +1,20 @@
-#include <iostream>
-using namespace std;
-
 /*
 CSC 134
 M5LAB1 - Choose Your Own Adventure
 3/31/24
 Haylee Paredes
 
-This template serves as a starting point
-for your own program. We'll be using
-void functions to tell a simple story,
-where the user gets to make choices.
+This template serves as a starting point for your own program. We'll be using void functions to tell a simple story, where the user gets to make choices.
 
 You can fork this template by clicking on the name above, then click the three
 dots on the top right, and click 'fork repl'. This makes a copy for you to use.
 */
 
-// Function Prototypes
-// Any functions you make will need to
-// be listed here, in this format, at the top.
-// This is so the compiler knows to save
-// room for them in the final program.
+#include <iostream>
+using namespace std;
+
+// Function Prototypes. Any functions you make will need to be listed here, in this format, at the top.
+// This is so the compiler knows to save room for them in the final program.
 void main_menu();
 void choice_front_door();
 void choice_back_door();
@@ -67,9 +61,7 @@ void main_menu() {
 }
 
 // FUNCTION DEFINITIONS
-// OK, we have the prototypes at the top, but
-// now we have to actually write the functions.
-// They go here, after main().
+// OK, we have the prototypes at the top, but now we have to actually write the functions. They go here, after main().
 void choice_front_door() {
   cout << "Try the front door." << endl;
   cout << "It's locked. " << endl;
@@ -108,8 +100,8 @@ void choice_back_door() {
 
 void choice_go_home() { 
     cout << "You decide the spooky old house isn't worth it." << endl; 
-    cout << "You walk back down the path, hands in your pockets." << endl;
     cout << "As you turn away, the lights in the house flicker once then go dark." << endl;
+    cout << "Without noticing the strange occurrence, you walk back down the path, hands in your pockets." << endl;
     cout << "-- THE END --" << endl; 
 }
 
@@ -136,8 +128,8 @@ void choice_in_house() {
 
         if (1 == choice2) {
             cout << "You pick up the glowing object. It pulses with a warm light." << endl;
-            cout << "It's an old lantern and it seems to be still warm." << endl;
-            cout << "" << endl;
+            cout << "It's an old lantern and it seems to be still warm!" << endl;
+            cout << "You tuck the lantern under your arm and walk back out into the night." << endl;
             cout << "-- THE END --" << endl;
         } else if (2 == choice2) {
             choice_go_home();
