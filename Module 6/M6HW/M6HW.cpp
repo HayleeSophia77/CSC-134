@@ -338,10 +338,7 @@ void choice_good_ending() {
 }
 
 void choice_go_home() { 
-    cout << "You turn away from the house." << endl;
-    cout << "You don't go inside." << endl;
-    cout << "You don't go around back." << endl;
-    cout << "You just leave." << endl;
+    cout << "You leave the house behind." << endl;
     cout << endl;
     cout << "The walk home feels longer than it should." << endl;
     cout << "Too quiet." << endl;

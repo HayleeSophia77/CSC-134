@@ -1,0 +1,1921 @@
+// CSC 134
+// M6HW
+// 04/29/2026
+// Haylee Paredes
+
+AI Prompt Documentation
+
+Prompt 1
+
+ME:
+"what are some good backstories that I can use for this choose ur own adventure code?
+
+#include <iostream>
+using namespace std;
+
+// Function Prototypes. Any functions you make will need to be listed here, in this format, at the top.
+// This is so the compiler knows to save room for them in the final program.
+void main_menu();
+void choice_front_door();
+void choice_back_door();
+void choice_go_home();
+void choice_in_house();
+
+int main() {
+  cout << "M5LAB1 - Choose Your Own Adventure" << endl;
+  // load up the main menu
+  main_menu();
+  // when we return here, we're done
+  cout << "Thanks for playing!" << endl;
+  return 0; // finished with no errors
+}
+
+void main_menu() {
+  // Write a simple menu that lets the user choose 1,2, or 3, or 4 to quit.
+  cout << "Main Menu" << endl;
+  cout << "You're in front of a spooky old house..." << endl;
+  cout << "Do you:" << endl;
+  cout << "1. Try the front door." << endl;
+  cout << "2. Sneak around back." << endl;
+  cout << "3. Forget it, and go home." << endl;
+  cout << "4. Quit" << endl;
+  cout << "Choose: ";
+
+  int choice;
+  cin >> choice;
+
+  if (1 == choice) {
+    choice_front_door();
+  } else if (2 == choice) {
+    choice_back_door();
+  } else if (3 == choice) {
+    choice_go_home();
+  } else if (4 == choice) {
+    cout << "Ok, quitting game." << endl;
+    return; // go back to main()
+  } else {
+    cout << "That's not a valid choice, please try again." << endl;
+    cin.ignore(); // clear the user input
+    main_menu();  // try again
+  }
+}
+
+// FUNCTION DEFINITIONS
+// OK, we have the prototypes at the top, but now we have to actually write the functions. They go here, after main().
+void choice_front_door() {
+  cout << "Try the front door." << endl;
+  cout << "It's locked. " << endl;
+  cout << "Do you:" << endl;
+  cout << "1. Check around back." << endl;
+  cout << "2. Give up and go home." << endl;
+
+  int choice;
+  cout << "Choose: ";
+  cin >> choice;
+
+  if (1 == choice) {
+    choice_back_door();
+  } else if (2 == choice) {
+    choice_go_home();
+  }
+}
+
+void choice_back_door() { 
+    cout << "You sneak around back." << endl; 
+    cout << "The back door is open by a crack. A dim light flickers inside." << endl;
+    cout << "Do you:" << endl;
+    cout << "1. Push it open and go inside." << endl;
+    cout << "2. Run out from the back of the house and go home." << endl;
+
+    int choice;
+    cout << "Choose: ";
+    cin >> choice;
+
+    if (1 == choice) {
+        choice_in_house();
+    } else if (2 == choice) {
+        choice_go_home();
+    }
+}
+
+void choice_go_home() { 
+    cout << "You decide the spooky old house isn't worth it." << endl; 
+    cout << "As you turn away, the lights in the house flicker once then go dark." << endl;
+    cout << "Without noticing the strange occurrence, you walk back down the path, hands in your pockets." << endl;
+    cout << "-- THE END --" << endl; 
+}
+
+void choice_in_house() {
+    cout << "You push the door open and step inside." << endl;
+    cout << "The room is dark and dusty. You can hear creaking sounds from the walls." << endl;
+    cout << "Do you:" << endl;
+    cout << "1. Explore the room." << endl;
+    cout << "2. Leave and go home." << endl;
+
+    int choice;
+    cout << "Choose: ";
+    cin >> choice;
+
+    if (1 == choice) {
+        cout << "In the corner, you see a glowing object on a dusty table." << endl;
+        cout << "Do you:" << endl;
+        cout << "1. Pick it up and inspect it." << endl;
+        cout << "2. Nope. Absolutely not, time to go home." << endl;
+
+        int choice2;
+        cout << "Choose: ";
+        cin >> choice2;
+
+        if (1 == choice2) {
+            cout << "You pick up the glowing object. It pulses with a warm light." << endl;
+            cout << "It's an old lantern and it seems to be still warm!" << endl;
+            cout << "You tuck the lantern under your arm and walk back out into the night." << endl;
+            cout << "-- THE END --" << endl;
+        } else if (2 == choice2) {
+            choice_go_home();
+        }
+
+    } else if (2 == choice) {
+        choice_go_home();
+    }
+}"
+
+**********
+
+Claude:
+"Your structure is already solid—you just need a strong theme/backstory to make the choices feel meaningful instead of random. I’ll give you a few ideas you can plug directly into your existing code (same choices, just better story flavor), plus how they branch.
+
+🕯️ 1. 'The Missing Person Case' (mystery vibe)
+
+Backstory:
+You’re a college student investigating the disappearance of your friend who was last seen near this abandoned house. Police gave up, but you didn’t.
+
+How it fits your code:
+
+Front door → locked = police already tried entry
+Back door → cracked = someone (or something) still uses it
+Glowing object → your friend’s phone still powered on
+
+Ending ideas:
+
+Pick up object → phone rings → unknown voice answers → cliffhanger
+Go home → you later get a text from your missing friend: 'Why didn’t you come inside?'
+👻 2. 'Haunted House Dare' (classic horror)
+
+Backstory:
+You and your friends made a bet that you wouldn’t enter the most haunted house in town. You showed up alone to prove them wrong.
+
+How it fits:
+
+Front door locked = 'no one gets in easily'
+Back door open = trap
+Lantern = cursed object that binds you to the house
+
+Ending ideas:
+
+Take lantern → you become the next 'ghost' of the house
+Leave → your friends don’t believe you… until they see something behind you
+🧪 3. 'Secret Government Experiment' (sci-fi)
+
+Backstory:
+This isn’t just a house—it’s an abandoned government lab disguised as one. Strange lights have been seen at night.
+
+How it fits:
+
+Flickering lights = still powered facility
+Back door = maintenance entrance
+Glowing object = experimental energy device
+
+Ending ideas:
+
+Pick it up → you gain weird abilities
+Leave → black SUV follows you home (they know you saw it)
+🧠 4. 'Your Own Memory' (psychological twist)
+
+Backstory:
+You don’t remember why you’re here… but the house feels familiar. Like you’ve been here before.
+
+How it fits:
+
+Front door locked = you’re 'locked out' of your memory
+Back door open = subconscious access
+Lantern = memory trigger
+
+Ending ideas:
+
+Pick it up → you remember this is YOUR house
+Go home → you realize… you don’t actually know where home is
+🧙‍♀️ 5. 'Witch’s House' (fantasy)
+
+Backstory:
+The house belongs to a witch who was rumored to grant wishes—but at a cost.
+
+How it fits:
+
+Back door open = invitation
+Lantern = magical artifact
+
+Ending ideas:
+
+Take lantern → you get a wish (but something goes wrong)
+Leave → you hear whisper: 'You missed your chance…'
+😈 6. 'You Were Lured Here' (dark twist)
+
+Backstory:
+You didn’t just 'find' this house… something wanted you here.
+
+How it fits:
+
+Lights flicker when you leave = reacting to YOU
+Lantern = bait
+
+Ending ideas:
+
+Pick it up → door slams shut behind you
+Go home → something follows you anyway
+🧩 If you want to level it up (easy upgrades)
+
+You can add:
+
+A bad ending / good ending system
+A hidden 'true ending' if they make certain choices
+A loop back to the main menu after endings
+
+Example:
+
+cout << "-- BAD ENDING --" << endl;
+main_menu(); // restart game
+👍 My honest recommendation
+
+If this is for class, go with:
+👉 'Missing Person Case' or 'Secret Lab'
+
+They feel more unique than just “haunted house” and your instructor will notice.
+
+If you want, I can:
+
+Rewrite your entire story with one theme plugged in
+Add more branches (like upstairs, basement, etc.)
+Or help you turn this into a full project with multiple endings"
+
+--------------------------------------------------------------
+Prompt 2
+
+ME: 
+"Opening - You sleepwalked to this house. You came to standing on the front path with no memory of leaving your bed. The house wanted you here.
+
+Rooms:
+Front path (main menu) - sleepwalking backstory is established 
+Front door -  locked, dead end
+Backyard - back door is cracked open, padlocked cellar door is also out here
+Inside the house is a lantern and cellar key are here together, making it feel like a jackpot. (Need a second key here too but not sure what to add.)
+Cellar - bad ending path only, filled with photos of you 
+
+Choices:
+Pick up the lantern - you are now on the bad ending path, cellar key becomes available
+Leave the lantern - you are now on the good ending path, Path B key becomes available (location TBD yet)
+
+Endings:
+Bad ending - find cellar key, go down, see the photos, door locks behind you. The house wins. Player doesn't know it's the bad ending until it's too late.
+Good ending - find Path B key, leave the house without the lantern, phone buzzes on 1% outside with a notification, then dies. the notification - You leave the house. But the last line is something like: "Three blocks away, your phone buzzes back to life. One notification: a photo. You, standing on the front path. Timestamp: 3 weeks ago." or something similar to that. What the key opens is still TBD.
+Coward ending - leave without going inside at all, something feels off the whole walk home.
+
+What can i add as a 2nd key option and what do you find after you unlock it?"
+
+**********
+
+Claude:
+"This is already really strong 👀 — the 'you were brought here' + delayed realization ending is actually way better than a basic haunted house. You just need a second key path that feels intentional, not random.
+
+The key thing (no pun intended) is:
+👉 The lantern = trap (house pulls you deeper)
+👉 The 2nd key = escape (but still unsettling)
+
+So whatever you add should reinforce that contrast.
+
+🔑 Option 1: 'Basement Window / Escape Hatch Key' (clean + creepy)
+
+Second key: Rusty side door / window latch key
+Where it is: Same room as lantern (but only appears if you DON’T take lantern)
+
+What it opens:
+A boarded-up side exit or crawlspace window
+
+What you find:
+
+Fresh air, but the outside looks… slightly wrong
+Street is empty, too quiet
+You escape physically, but something is still off
+
+Why this works:
+
+Simple to code
+Clean 'good ending' path
+Keeps your psychological horror tone
+
+Extra creepy detail you can add:
+
+The boards weren’t nailed shut… they were nailed from the inside.
+
+🔑 Option 2: 'Bedroom Key' (memory horror)
+
+Second key: Old brass bedroom key
+
+What it opens:
+A locked bedroom upstairs
+
+What you find:
+
+A bed… exactly like yours
+Phone charger plugged in
+Maybe your clothes laid out
+
+Then:
+
+Your phone (at 1%) is already there
+That’s the one that buzzes in the ending
+
+Why this works:
+
+Ties directly into sleepwalking
+Makes the house feel like it’s been recreating your life
+
+Extra line idea:
+
+The indentation on the pillow looks recent.
+
+🔑 Option 3: 'Front Door Key (but reversed)' (symbolic + eerie)
+
+Second key: Front door key
+
+What it opens:
+The same front door that was locked earlier
+
+What you find:
+
+It opens now… but the outside path looks slightly different
+Like you’re leaving… but not the same place
+
+Why this works:
+
+Super clean callback to your beginning
+Gives a 'loop / reality shift' vibe
+
+Extra twist:
+
+The path is longer than it should be.
+
+🔑 Option 4 (BEST FIT IMO): 'Padlocked Cellar… but Safe Route'
+
+You already have a cellar 👀 — use it differently depending on the path.
+
+Second key: A different cellar key (clean, newer one)
+
+Rule:
+
+If you picked up the lantern → BAD cellar (photos, trap)
+If you DIDN’T → SAFE cellar (escape route)
+
+What you find in good path cellar:
+
+Empty, unfinished basement
+A back tunnel / storm exit
+No photos… just dirt and silence
+
+Why this works:
+
+Reuses your existing structure (less coding)
+Makes the lantern choice feel meaningful
+Same location, totally different outcome = 🔥 game design
+
+Extra creepy detail:
+
+There are nail marks on the inside of the cellar door… like someone tried to get out.
+
+🔑 Option 5: 'Car Key / Reality Anchor' (modern twist)
+
+Second key: Your own car key (you don’t remember bringing it)
+
+What it opens:
+Your car parked nearby
+
+What you find:
+
+You leave using your car
+Phone buzz happens after
+
+Why this works:
+
+Grounds the story in reality
+Makes the sleepwalking more disturbing
+💡 My honest recommendation
+
+Go with this combo:
+
+👉 Second key = 'clean cellar key' (Option 4)
+👉 Same cellar, different outcomes based on lantern choice
+
+Because:
+
+It keeps your map simple (you already built cellar)
+It creates a branching illusion with minimal extra code
+It reinforces your core theme:
+'The house isn’t random. It reacts to your choices.'
+🔥 Small upgrade that will make this hit HARD
+
+When the player sees both items:
+
+Instead of:
+
+'You see a lantern and two keys.'
+
+Do:
+
+'On the table: a lantern… and two keys.
+One is old and rusted. The other looks newer.
+For a moment, you get the strange feeling you’re being asked to choose.'
+
+If you want, I can:
+
+Write the exact dialogue for each path in your coding style
+Help you add the second key logic cleanly into your functions
+Or design a true ending (like breaking the loop entirely 👀)"
+
+--------------------------------------------------------------
+Prompt 3
+
+ME:
+"I really like option 4. I want the player to find the keys not have them right there for them with three different rooms to go through. I want the phone notification thing to happen AFTER the player leaves the house. i do like the regents of a foreshadowing of what could have happened for the bad ending like the nail marks on the walls? cellar door? I want the good ending to imply that both options were bad endings but one ended with you trapped and the other being of still being watched. Basically one really bad ending and one okay ending. I would also like to add the house being dark on the insided. maybe have the phone at 5% battery instead and using it as a flashlight opposed to using the lantern? but when leaving the house the phone is at 1% battery, the notification happens and then it dies. Maybe we can change what the notication shows or like the timestamp of the photo?"
+
+**********
+
+Claude: 
+"This is getting really good—like, this is the kind of twist your instructor will actually remember. You’ve got a clear theme now:
+
+The house manipulates you. There is no 'good' ending—only degrees of bad.
+
+Let’s lock in your structure and refine the pieces so everything feels intentional and connected.
+
+🏚️ Final Structure (clean + creepy)
+🌑 Core mechanic
+Phone = safe light (5%) → rational choice
+Lantern = unnatural light → trap
+Two cellar keys = same door, different outcomes
+🔑 Key System (your 3-room exploration)
+Room 1: Main Room (entry)
+Dark, dusty
+Table with lantern (unlit)
+No keys yet
+You use your phone flashlight (5%)
+Room 2: Hallway / Side Room
+You find:
+👉 Clean cellar key (good path key)
+
+Subtle hint:
+
+'It looks newer… like it doesn’t belong here.'
+
+Room 3: Kitchen / Back Room
+You find:
+👉 Rusted cellar key (bad path key)
+
+Foreshadowing:
+
+'The metal is worn smooth… like it’s been used. A lot.'
+
+⚠️ Important rule
+If player picks up lantern:
+→ Rusted key becomes usable
+→ Clean key disappears or 'doesn’t feel right'
+If player ignores lantern:
+→ Clean key works
+→ Rusted key 'doesn’t fit'
+
+This makes the choice feel subconscious, not mechanical.
+
+🔦 Lantern vs Phone (THIS is 🔥)
+
+Yes—use the phone instead of forcing the lantern. That’s a great psychological detail.
+
+When player sees lantern:
+
+Instead of making it required:
+
+'Your phone light flickers at 5%. The lantern beside it glows faintly… even though it isn’t lit.'
+
+Choice:
+
+Use lantern (temptation / bad path)
+Keep using phone (good path)
+🪵 Cellar (two versions)
+🔴 BAD PATH (lantern + rusted key)
+Photos everywhere
+All of YOU
+Different angles
+Some from inside the house
+Some from outside
+Add this line:
+
+'In one photo, you’re standing exactly where you are now… holding the lantern.'
+
+Then:
+
+Door slams
+Locked
+Lights out
+
+👉 The player realizes too late
+
+🟡 'GOOD' PATH (phone + clean key)
+Cellar is mostly empty
+Dirt floor
+Narrow exit tunnel / storm hatch
+Foreshadowing (this is key):
+Scratches on inside of cellar door
+BUT no photos
+
+Add line:
+
+'Whatever was down here… isn’t anymore.'
+
+You escape through the hatch.
+
+📱 Ending Sequence (this is your strongest moment)
+
+You wanted:
+
+Phone at 1%
+Notification AFTER leaving
+Then it dies
+
+Let’s make it hit harder.
+
+🌕 Outside the house
+
+'You step out into the night. The air feels… normal. Your phone buzzes weakly in your hand. 1%.'
+
+📲 Notification
+
+Instead of just a random photo—make it specific and wrong:
+
+🔥 Best version:
+
+1 New Notification
+Photos (1)
+
+You open it:
+
+A photo of you…
+standing on the front path.
+Looking directly at the camera.
+
+Pause.
+
+Then:
+
+Timestamp: 3 weeks ago
+
+🧠 Add one extra twist (this elevates everything):
+
+'Your phone dies before you can zoom in.
+But you could have sworn…
+the version of you in the photo wasn’t holding a phone.'
+
+😨 Optional upgrade (HIGHLY recommended)
+
+If you want that 'still being watched' feeling:
+
+After a few steps away:
+
+'Three blocks down, your phone vibrates again.
+You don’t remember it having any charge left.'
+
+You don’t even need to show what it is.
+Ambiguity = scarier.
+
+🧩 Subtle Foreshadowing Ideas (sprinkle these in)
+
+Use 1–2 of these, not all:
+
+'You feel like you’ve stood here before.'
+'The dust on the floor is disturbed… like recent footprints.'
+'The house creaks… but not with age. With movement.'
+'For a second, your phone camera flickers on by itself.'
+🎯 What you’ve built (why this works)
+
+You now have:
+
+Clear branching mechanic (lantern vs phone)
+Same location, different outcomes (cellar)
+Foreshadowing (scratches vs photos)
+Delayed horror (notification AFTER escape)
+Theme consistency (you were always being watched)
+👍 Final verdict (no sugarcoating)
+
+This is:
+
+Not basic
+Not predictable
+Actually smart horror design
+
+The only thing that would ruin it is:
+👉 Over-explaining
+
+Keep some things unexplained (like the photo origin).
+
+If you want next, I can:
+
+Write your exact C++ dialogue lines for each room
+Help you structure the functions cleanly for the branching
+Or add a hidden 'true ending' where the loop breaks 👀"
+
+--------------------------------------------------------------
+Prompt 4
+
+ME:
+"Okay i like it. For the 'good' path, can we take out the narrow exit tunnel/storm hatch thing? Maybe the cellar is basically a storm hatch just repurposed as a cellar?"
+
+**********
+
+Claude:
+"Yeah—that’s actually a better move. The tunnel was starting to feel a little 'gamey.' Making the cellar itself the storm hatch keeps everything tighter, more realistic, and more unsettling.
+
+It also strengthens your theme:
+
+There was always an exit… the house just decides what you see.
+
+🟡 Updated 'Good' Path (clean + subtle horror)
+When player unlocks cellar (clean key, no lantern)
+
+You open it:
+
+'The cellar door creaks open slowly.
+Cold air rushes up… fresh air.'
+
+Immediately different tone from bad path.
+
+Inside the cellar (storm hatch style)
+Dirt floor
+Short space (not a full basement)
+Wooden supports
+No photos
+Key detail:
+
+You can see faint light from the opposite end (the outside)
+
+Foreshadowing (keep this, it’s important)
+
+'Deep scratches line the inside of the cellar door…
+like something tried to get out.'
+
+This connects to the bad ending without showing it.
+
+The 'almost normal' escape
+
+'It’s not really a cellar.
+More like a storm hatch… repurposed.'
+
+Then:
+
+'You crouch and move through it.
+Within a few steps, you’re outside.'
+
+No dramatic escape.
+No chase.
+That’s what makes it unsettling.
+
+🌑 Why this version works better
+Feels realistic (storm hatch > secret tunnel)
+Keeps the house grounded (which makes horror stronger)
+Suggests:
+Someone used this before
+Someone tried to escape
+
+But doesn’t say who 👀
+
+🔴 Contrast with BAD path (this is important)
+
+Now both paths use the same door, but:
+
+Path	What you see	Meaning
+Lantern	Photos everywhere	You were always trapped
+Phone	Empty hatch + scratches	Someone else failed before you
+📱 Transition to ending (smooth flow)
+
+After exiting:
+
+'You step out into the night behind the house.
+The door falls shut behind you with a dull thud.'
+
+No slam. No drama. Just… final.
+
+Then go into your phone sequence:
+
+'Your phone buzzes weakly in your hand.
+1%.'
+
+🔥 Small detail that will elevate it
+
+Right before leaving the cellar:
+
+'You hesitate for a second…
+like you’re forgetting something.'
+
+This subtly ties back to:
+👉 the lantern (the 'wrong' choice)
+
+💀 Final tone check
+
+What your endings now say:
+
+Bad ending:
+You never had control. You were already caught.
+'Good' ending:
+You escaped… but not completely.
+You were already part of this before tonight.
+👍 Honest take
+
+This version is:
+
+Cleaner
+Less cliché
+More psychological
+
+And honestly?
+That storm hatch detail + scratches is one of the strongest parts of your story now.
+
+If you want, next I can:
+
+Write the exact dialogue text so you can paste into your C++ functions
+Or help you organize your rooms into clean functions like choice_kitchen(), choice_hallway(), etc."
+
+--------------------------------------------------------------
+Prompt 5
+
+ME:
+"I was thinking that the cellar/storm hatch was outside the house not inside, if you get what I mean."
+
+**********
+
+Claude:
+"Yeah—that actually makes it even better.
+
+Having the cellar/storm hatch outside in the backyard:
+
+keeps your layout simple (front → inside → backyard → cellar)
+makes the choice feel more physical (you leave the house before the final decision)
+and it strengthens the 'you almost escaped' feeling
+🏚️ Updated Flow (clean + logical)
+Layout
+Front path (start)
+Back door → inside house (exploration + keys)
+Backyard → cellar/storm hatch outside
+
+So the player:
+👉 goes inside → makes choices → comes back out → then decides to open cellar
+
+That 'back outside' moment is important psychologically.
+
+🔑 How your two paths now feel
+🔴 BAD PATH (lantern)
+You grab lantern
+Find rusted key
+Go back outside
+Open cellar
+Inside cellar:
+Photos everywhere
+You realize too late
+
+👉 You chose to go back out… but the house already had you
+
+🟡 'GOOD' PATH (phone)
+You ignore lantern
+Use phone light (5%)
+Find clean key
+Go back outside
+Open cellar
+Inside cellar:
+It’s just a storm hatch space
+Short, dirt, cramped
+Exit on the other side
+
+👉 You escape
+
+🔥 This detail is VERY important now
+
+When the player goes back outside after exploring the house:
+
+Add this:
+
+'The back door creaks shut behind you…
+and for a moment, you’re not sure if you can open it again.'
+
+This creates tension:
+
+The house feels like it’s done with you
+Or… letting you go on purpose
+🪵 Backyard Cellar (final version)
+When opening it (both paths):
+
+'The padlock clicks open.
+The cellar door is heavier than it should be.'
+
+🟡 GOOD PATH version (outside hatch)
+
+'You lift it.
+Cool air rises from below… fresh, not stale.'
+
+'It’s not really a cellar.
+More like a storm hatch—shallow, with just enough space to crawl through.'
+
+'Faint light spills in from the other side.'
+
+Foreshadowing:
+
+'Scratches line the inside of the door… deep and uneven.'
+
+Then:
+
+'You drop down and move forward.
+Within seconds, you’re out the other side—
+behind the property, away from the house.'
+
+🔴 BAD PATH version
+
+Same entry… but different reveal:
+
+'You lift the door.
+The air is warm.'
+
+'Too warm.'
+
+Then:
+
+Photos
+Trap
+📱 Ending (now hits harder with outside placement)
+
+Because now:
+👉 You escaped the house AND the yard
+👉 You should be safe
+
+Final sequence
+
+'You don’t look back.
+You just walk.'
+
+'Your phone buzzes in your hand.
+1%.'
+
+Notification:
+
+Photos (1)
+
+You open it:
+
+'It’s you.
+Standing on the front path.'
+
+'Looking directly at the camera.'
+
+Timestamp: 3 weeks ago
+
+Then:
+
+'Your phone dies.'
+
+🔥 Small but powerful addition
+
+Since the cellar is outside, add this line when exiting:
+
+'From here, the house looks… normal.'
+
+That contrast makes everything worse.
+
+🧠 Why this version is stronger
+Physical movement (inside → outside → cellar) = more immersive
+'Escape' feels real before it gets taken away
+The house feels like it guided you through a process, not just trapped you randomly
+👍 Honest take
+
+This is now:
+
+Cohesive
+Easy to code
+Actually smart horror design (not just spooky text)
+
+The outside cellar was a really good instinct—you fixed what would’ve been the only slightly awkward part.
+
+If you want next, I can:
+
+Map this into exact functions for your code (like choice_kitchen(), choice_backyard(), etc.)
+Or write the full script dialogue so you can just copy/paste into C++"
+
+--------------------------------------------------------------
+Prompt 6
+
+ME: 
+"Okay I really like this. Can you like write out the storyline for me so I can take a look at and see if i like everything so far, and if I want to change anything?"
+
+**********
+
+Claude:
+"Alright, here’s your full storyline written out cleanly like a playable script. This keeps everything consistent with your mechanics, tone, and endings so you can read it like a mini story and tweak anything you don’t like.
+
+🏚️ Choose Your Own Adventure – Full Story Draft
+🌑 Opening (Front Path)
+
+You wake up standing on a gravel path.
+
+The air is cold. Quiet.
+
+In front of you sits a house—old, dark, and completely still.
+
+You don’t remember leaving your bed.
+
+You don’t remember coming here.
+
+Your phone is in your hand.
+
+5% battery.
+
+The flashlight flickers weakly as you turn it on.
+
+For a moment, you get the strange feeling—
+
+you didn’t find this house.
+
+It wanted you here.
+
+Choices:
+
+Try the front door
+Go around back
+Leave
+🚪 Front Door (Dead End)
+
+You step up onto the porch.
+
+The wood creaks under your weight.
+
+You try the handle.
+
+Locked.
+
+It doesn’t budge.
+
+You linger for a second longer than you should…
+
+Then step back.
+
+Choices:
+
+Go around back
+Leave
+🚶 Backyard
+
+You make your way around the side of the house.
+
+The grass is overgrown.
+
+Something crunches under your shoe. You don’t look down.
+
+The back door is slightly open.
+
+Just a crack.
+
+Off to the side, half-hidden in the ground:
+
+A padlocked cellar door.
+
+Heavy. Rusted.
+
+Waiting.
+
+Choices:
+
+Go inside the house
+Leave
+🏠 Inside the House (Main Room)
+
+You push the door open slowly.
+
+It creaks, loud in the silence.
+
+The inside is completely dark.
+
+Dust hangs in the air.
+
+Your phone light barely cuts through it.
+
+There’s a small table near the wall.
+
+On it:
+
+A lantern.
+
+It isn’t lit.
+
+But it… glows.
+
+Faint. Warm.
+
+Your phone flickers in your hand.
+
+5%.
+
+Choices:
+
+Take the lantern
+Ignore it and keep using your phone
+Explore further
+Leave
+🔦 Choice Split (important but subtle)
+If player takes lantern → 🔴 bad path begins
+If player keeps phone → 🟡 'good' path begins
+🚪 Exploring – Hallway / Side Room
+
+You move deeper into the house.
+
+The floor creaks beneath each step.
+
+In a small side room, something catches your eye.
+
+A key.
+
+It looks… newer than everything else here.
+
+Clean.
+
+Out of place.
+
+👉 Clean Cellar Key found (good path)
+
+🍽️ Kitchen / Back Room
+
+The next room smells faintly of something you can’t place.
+
+On the counter—
+
+Another key.
+
+Rusted.
+
+Worn smooth, like it’s been used over and over again.
+
+👉 Rusted Cellar Key found (bad path)
+
+⚠️ Subtle Mechanics (implied in story)
+Lantern makes the rusted key feel 'right'
+Phone makes the clean key feel 'right'
+🚪 Returning Outside
+
+You step back through the rear door.
+
+It creaks shut behind you.
+
+For a second…
+
+You’re not sure if it’ll open again.
+
+🔐 Cellar Door (Final Choice)
+
+You stand over the cellar door.
+
+The padlock hangs loose in your hand now.
+
+It clicks open.
+
+The door is heavier than it should be.
+
+🔴 BAD ENDING (Lantern Path)
+
+You lift the cellar door.
+
+Warm air rises from below.
+
+Too warm.
+
+You climb down.
+
+The light—your light—fills the space.
+
+Photos.
+
+Everywhere.
+
+Taped to the walls.
+Nailed into the wood.
+Scattered across the ground.
+
+All of them…
+
+You.
+
+Standing on the front path.
+
+Walking toward the house.
+
+Inside the house.
+
+Watching.
+
+One photo sits apart from the others.
+
+You pick it up.
+
+It’s you—
+
+standing exactly where you are now.
+
+Holding the lantern.
+
+The door slams shut above you.
+
+Darkness.
+
+The house wins.
+
+-- THE END --
+
+🟡 'GOOD' ENDING (Phone Path)
+
+You lift the cellar door.
+
+Cool air rises from below.
+
+Fresh.
+
+You drop down carefully.
+
+It’s not really a cellar.
+
+More like a storm hatch.
+
+Shallow. Tight.
+
+Faint light spills in from the other side.
+
+Scratches line the inside of the door above you.
+
+Deep. Uneven.
+
+Like something tried to get out.
+
+You don’t stay long.
+
+You move forward.
+
+Within seconds…
+
+you’re outside.
+
+🌕 After Escape
+
+You don’t look back.
+
+You just walk.
+
+The house disappears behind you.
+
+From here…
+
+it looks normal.
+
+Your phone buzzes weakly in your hand.
+
+1%.
+
+📱 Final Notification
+
+1 New Notification
+Photos (1)
+
+You open it.
+
+It’s you.
+
+Standing on the front path.
+
+Looking directly at the camera.
+
+Timestamp:
+
+3 weeks ago
+
+Your phone dies.
+
+For a moment…
+
+you feel like you’re forgetting something.
+
+You keep walking.
+
+-- THE END --
+
+🟤 Coward Ending
+
+You turn away from the house.
+
+You don’t go inside.
+
+You don’t go around back.
+
+You just leave.
+
+The walk home feels longer than it should.
+
+Too quiet.
+
+Something about the night feels… off.
+
+Like you were supposed to do something.
+
+And didn’t.
+
+-- THE END --
+
+👍 Final Thoughts (quick)
+
+This version:
+
+Keeps everything consistent
+Builds tension slowly
+Doesn’t over-explain
+Makes both endings feel intentional
+
+If you want next, I can:
+
+Convert this directly into your C++ functions/dialogue
+Help you add a loop/replay system
+Or add a hidden true ending where the player breaks the cycle 👀"
+
+--------------------------------------------------------------
+Prompt 6
+
+ME:
+"I want to put this in a google doc. Can you do this without emojis or whatever?"
+
+**********
+
+Claude:
+"Absolutely—here’s a clean, formatted version you can paste directly into a Google Doc.
+
+Choose Your Own Adventure – Story Draft
+Opening (Front Path)
+
+You wake up standing on a gravel path.
+
+The air is cold. Quiet.
+
+In front of you sits a house—old, dark, and completely still.
+
+You don’t remember leaving your bed.
+You don’t remember coming here.
+
+Your phone is in your hand.
+
+5% battery.
+
+The flashlight flickers weakly as you turn it on.
+
+For a moment, you get the strange feeling—
+
+you didn’t find this house.
+
+It wanted you here.
+
+Choices:
+
+Try the front door
+Go around back
+Leave
+Front Door
+
+You step up onto the porch.
+
+The wood creaks under your weight.
+
+You try the handle.
+
+Locked.
+
+It doesn’t budge.
+
+You linger for a second longer than you should…
+
+Then step back.
+
+Choices:
+
+Go around back
+Leave
+Backyard
+
+You make your way around the side of the house.
+
+The grass is overgrown.
+
+Something crunches under your shoe. You don’t look down.
+
+The back door is slightly open.
+
+Just a crack.
+
+Off to the side, half-hidden in the ground:
+
+A padlocked cellar door.
+
+Heavy. Rusted.
+
+Waiting.
+
+Choices:
+
+Go inside the house
+Leave
+Inside the House (Main Room)
+
+You push the door open slowly.
+
+It creaks, loud in the silence.
+
+The inside is completely dark.
+
+Dust hangs in the air.
+
+Your phone light barely cuts through it.
+
+There’s a small table near the wall.
+
+On it:
+
+A lantern.
+
+It isn’t lit.
+
+But it glows faintly. Warm.
+
+Your phone flickers in your hand.
+
+5%.
+
+Choices:
+
+Take the lantern
+Ignore it and keep using your phone
+Explore further
+Leave
+Exploration – Side Room
+
+You move deeper into the house.
+
+The floor creaks beneath each step.
+
+In a small side room, something catches your eye.
+
+A key.
+
+It looks newer than everything else here.
+
+Clean. Out of place.
+
+You pick it up.
+
+Exploration – Kitchen / Back Room
+
+The next room smells faintly of something you can’t place.
+
+On the counter—
+
+Another key.
+
+Rusted.
+
+Worn smooth, like it’s been used over and over again.
+
+You take it.
+
+Returning Outside
+
+You step back through the rear door.
+
+It creaks shut behind you.
+
+For a second…
+
+You’re not sure if it will open again.
+
+Cellar Door
+
+You stand over the cellar door.
+
+The padlock hangs loose in your hand now.
+
+It clicks open.
+
+The door is heavier than it should be.
+
+Bad Ending
+
+You lift the cellar door.
+
+Warm air rises from below.
+
+Too warm.
+
+You climb down.
+
+Your light fills the space.
+
+Photos.
+
+Everywhere.
+
+Taped to the walls.
+Nailed into the wood.
+Scattered across the ground.
+
+All of them—
+
+you.
+
+Standing on the front path.
+Walking toward the house.
+Inside the house.
+
+Watching.
+
+One photo sits apart from the others.
+
+You pick it up.
+
+It’s you—
+
+standing exactly where you are now.
+
+Holding the lantern.
+
+The door slams shut above you.
+
+Darkness.
+
+The house wins.
+
+The end.
+
+'Good' Ending
+
+You lift the cellar door.
+
+Cool air rises from below.
+
+Fresh.
+
+You drop down carefully.
+
+It’s not really a cellar.
+
+More like a storm hatch.
+
+Shallow. Tight.
+
+Faint light spills in from the other side.
+
+Scratches line the inside of the door above you.
+
+Deep. Uneven.
+
+Like something tried to get out.
+
+You don’t stay long.
+
+You move forward.
+
+Within seconds, you’re outside.
+
+After Escape
+
+You don’t look back.
+
+You just walk.
+
+The house disappears behind you.
+
+From here, it looks normal.
+
+Your phone buzzes weakly in your hand.
+
+1%.
+
+Final Notification
+
+1 New Notification
+Photos (1)
+
+You open it.
+
+It’s you.
+
+Standing on the front path.
+
+Looking directly at the camera.
+
+Timestamp:
+
+3 weeks ago.
+
+Your phone dies.
+
+For a moment…
+
+you feel like you’re forgetting something.
+
+You keep walking.
+
+The end.
+
+Coward Ending
+
+You turn away from the house.
+
+You don’t go inside.
+
+You don’t go around back.
+
+You just leave.
+
+The walk home feels longer than it should.
+
+Too quiet.
+
+Something about the night feels off.
+
+Like you were supposed to do something.
+
+And didn’t.
+
+The end.
+
+If you want, I can also:
+
+Format this into headings exactly how your professor might want (APA-style, title page, etc.)
+Or break it into sections that directly match your C++ functions so it’s easier to code"
+
+--------------------------------------------------------------
+Prompt 7
+
+ME:
+"'Explore further'
+I think we should take out the explore further choice. The player should pick lantern or phone and explore after that."
+
+**********
+
+Claude:
+"Yeah, that’s a really good call—and honestly, it fixes one of the only weak points in the flow.
+
+Right now, 'explore further' feels like a filler choice. By removing it, you make the decision about the lantern vs. phone feel more intentional and important, which is exactly what you want.
+
+Here’s your updated version with that change smoothly integrated:
+
+Choose Your Own Adventure – Story Draft (Revised)
+Opening (Front Path)
+
+You wake up standing on a gravel path.
+
+The air is cold. Quiet.
+
+In front of you sits a house—old, dark, and completely still.
+
+You don’t remember leaving your bed.
+You don’t remember coming here.
+
+Your phone is in your hand.
+
+5% battery.
+
+The flashlight flickers weakly as you turn it on.
+
+For a moment, you get the strange feeling—
+
+you didn’t find this house.
+
+It wanted you here.
+
+Choices:
+
+Try the front door
+Go around back
+Leave
+Front Door
+
+You step up onto the porch.
+
+The wood creaks under your weight.
+
+You try the handle.
+
+Locked.
+
+It doesn’t budge.
+
+You linger for a second longer than you should…
+
+Then step back.
+
+Choices:
+
+Go around back
+Leave
+Backyard
+
+You make your way around the side of the house.
+
+The grass is overgrown.
+
+Something crunches under your shoe. You don’t look down.
+
+The back door is slightly open.
+
+Just a crack.
+
+Off to the side, half-hidden in the ground:
+
+A padlocked cellar door.
+
+Heavy. Rusted.
+
+Waiting.
+
+Choices:
+
+Go inside the house
+Leave
+Inside the House (Main Room)
+
+You push the door open slowly.
+
+It creaks, loud in the silence.
+
+The inside is completely dark.
+
+Dust hangs in the air.
+
+Your phone light barely cuts through it.
+
+There’s a small table near the wall.
+
+On it:
+
+A lantern.
+
+It isn’t lit.
+
+But it glows faintly. Warm.
+
+Your phone flickers in your hand.
+
+5%.
+
+Choices:
+
+Take the lantern
+Ignore it and keep using your phone
+Leave
+Decision and Exploration
+If you take the lantern:
+
+The moment your fingers touch it, the glow brightens.
+
+The darkness pulls back just a little.
+
+It feels… easier to see now.
+
+Easier to move.
+
+You step deeper into the house.
+
+If you keep your phone:
+
+Your phone light flickers again.
+
+Still weak. Still unreliable.
+
+But it’s yours.
+
+You take a breath and move forward anyway.
+
+Side Room (Clean Key)
+
+You move deeper into the house.
+
+The floor creaks beneath each step.
+
+In a small side room, something catches your eye.
+
+A key.
+
+It looks newer than everything else here.
+
+Clean. Out of place.
+
+You pick it up.
+
+Kitchen / Back Room (Rusted Key)
+
+The next room smells faintly of something you can’t place.
+
+On the counter—
+
+Another key.
+
+Rusted.
+
+Worn smooth, like it’s been used over and over again.
+
+You take it.
+
+Returning Outside
+
+You step back through the rear door.
+
+It creaks shut behind you.
+
+For a second…
+
+You’re not sure if it will open again.
+
+Cellar Door
+
+You stand over the cellar door.
+
+The padlock hangs loose in your hand now.
+
+It clicks open.
+
+The door is heavier than it should be.
+
+Bad Ending
+
+You lift the cellar door.
+
+Warm air rises from below.
+
+Too warm.
+
+You climb down.
+
+Your light fills the space.
+
+Photos.
+
+Everywhere.
+
+Taped to the walls.
+Nailed into the wood.
+Scattered across the ground.
+
+All of them—
+
+you.
+
+Standing on the front path.
+Walking toward the house.
+Inside the house.
+
+Watching.
+
+One photo sits apart from the others.
+
+You pick it up.
+
+It’s you—
+
+standing exactly where you are now.
+
+Holding the lantern.
+
+The door slams shut above you.
+
+Darkness.
+
+The house wins.
+
+The end.
+
+'Good' Ending
+
+You lift the cellar door.
+
+Cool air rises from below.
+
+Fresh.
+
+You drop down carefully.
+
+It’s not really a cellar.
+
+More like a storm hatch.
+
+Shallow. Tight.
+
+Faint light spills in from the other side.
+
+Scratches line the inside of the door above you.
+
+Deep. Uneven.
+
+Like something tried to get out.
+
+You don’t stay long.
+
+You move forward.
+
+Within seconds, you’re outside.
+
+After Escape
+
+You don’t look back.
+
+You just walk.
+
+The house disappears behind you.
+
+From here, it looks normal.
+
+Your phone buzzes weakly in your hand.
+
+1%.
+
+Final Notification
+
+1 New Notification
+Photos (1)
+
+You open it.
+
+It’s you.
+
+Standing on the front path.
+
+Looking directly at the camera.
+
+Timestamp:
+
+3 weeks ago.
+
+Your phone dies.
+
+For a moment…
+
+you feel like you’re forgetting something.
+
+You keep walking.
+
+The end.
+
+Coward Ending
+
+You turn away from the house.
+
+You don’t go inside.
+
+You don’t go around back.
+
+You just leave.
+
+The walk home feels longer than it should.
+
+Too quiet.
+
+Something about the night feels off.
+
+Like you were supposed to do something.
+
+And didn’t.
+
+The end.
+
+Why this change works (quick)
+Removes a filler choice
+Forces a meaningful early decision
+Makes the lantern vs. phone feel like the core mechanic
+Keeps pacing tighter and more immersive
+
+If you want next, I can help you:
+
+Translate this directly into your C++ functions step-by-step
+Or tighten the wording even more so it sounds exactly like your voice (less 'formal story', more 'you')"
+
+--------------------------------------------------------------
+Prompt 8
+
+ME:
+"No thanks I'm good. Thank you for helping me come up with a storyline!"
+
+**********
+
+Claude:
+"You’re welcome — this turned into a really solid concept. It’s clean, easy to follow, and actually has that lingering 'wait… what?' feeling at the end, which is hard to pull off.
+
+If you ever decide you want to tweak the tone, feel free to come back. Good luck with your assignment 👍"
